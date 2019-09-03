@@ -32,10 +32,33 @@ burger_info.each_with_index do | array, index |
 end
 
 
-p menuItems[1]
-p menuItems[5]
+# p menuItems[1]
+# p menuItems[5]
 
-puts "Lets make an order?"
+class Customer
+    def initialize(name, order)
+        @name = name
+        @order = order
+        # @payment
+    end
+
+    def name
+        userName = gets.chomp
+        p name
+    end
+
+    def order
+        userOrder = gets.chomp.to_i
+        p userOrder
+    end
+
+end
+
+test = Customer.new(josh, userOrder)
+
+test
+
+puts "Lets make an order!"
 print "> "
 
 userInput = gets.chomp.to_i
@@ -53,12 +76,6 @@ userInput = gets.chomp.to_i
 
 
 
-
-# test = Menu_items.new(items[1], items[2], items[3]. items[4])
-# test = Menu_items.new(items[0][1], items[0][2], items[0][3], items[0][4])
-# p test
-
-
 # split_again = []
 
 # items.each_with_index do |each_item|
@@ -72,12 +89,5 @@ userInput = gets.chomp.to_i
 
 # p test
 
-# class Customer
-#     def initialize
-#         @name = name
-#         @order = []
-#         payment
-#     end
-# end
 
-#huh
+

@@ -54,10 +54,6 @@ class Customer
 
 end
 
-test = Customer.new(josh, userOrder)
-
-test
-
 puts "Lets make an order!"
 print "> "
 

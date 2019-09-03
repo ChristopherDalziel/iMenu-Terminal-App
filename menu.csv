@@ -1,1 +1,7 @@
-sku, item, description, item type, price
+name,description, price
+Hamburger,Its a hamburger,10
+cheese burger,its got cheese,12
+vegan burger,no meat,10
+bacon burger, its got bacon,12
+chicken burger, its got chicken,15
+fish burger, its got fish,15

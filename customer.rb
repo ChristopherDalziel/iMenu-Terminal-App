@@ -56,23 +56,27 @@ puts
 puts 'Do you want to know more about any of these options?'
 print "> "
 # Function works, shows all descriptions for all burgers
-userInput = gets.strip.downcase
-if userInput == 'yes'
-    menuItems.each_with_index do |item, index|
-        puts "#{index + 1}. #{item.description}"
-    end
-end
-
-# running = true
-# while running = true do
-#     userInput = gets.strip.downcase.to_i
-#     puts menuItems[userInput].description
-#     puts 'Did you want to know more about anything else?'
-#     if userInput.to_s = 'no'
-#         running = false
+# userInput = gets.strip.downcase
+# if userInput == 'yes'
+#     menuItems.each_with_index do |item, index|
+#         puts "#{index + 1}. #{item.description}"
 #     end
 # end
 
+running = true
+while running == true do
+    userInput = gets.chomp.downcase
+    if userInput == 'no'
+        running = false
+        break
+    elsif userInput == 'yes'
+        running = true
+        puts "Awesome, enter the number you'd like to know more about."
+    userInput2 = gets.chomp.to_i-1
+    puts menuItems[userInput2].description
+    puts 'Did you want to know more about anything else?'
+    end
+end
 
 
 
@@ -88,7 +92,7 @@ puts
 puts "Awesome #{userName.name}, What would you like to order?"
 puts "Input the number of the Burger you'd like below"
 print "> "
-userOrder = gets.chomp.to_i 
+userOrder = gets.chomp.to_i-1
 selection = menuItems[userOrder]
 order << selection
 
@@ -113,20 +117,6 @@ while userPayment == 0
     end
 end
 
-# userPayment = gets.chomp.to_i
-
-
-# while userPayment != selection.price.to_i
-#     if userPayment == selection.price.to_i
-#         puts "Thank you! Order Complete"
-#     elsif userPayment < selection.price.to_i
-#         owed = selection.price.to_i - userPayment
-#         puts "I'm sorry you've still got $#{owed} left to pay"
-#     elsif userPayment > selection.price.to_i
-#         change = userPayment - selection.price.to_i
-#         puts "Here is your change of $#{change}"
-#     end
-# end
 
 File.open('output.csv', 'a+') do |line|
     line << "#{selection.name} is #{selection.price}" 

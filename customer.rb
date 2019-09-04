@@ -62,9 +62,10 @@ menuItems.each_with_index do |item, index|
     puts "#{index + 1}. #{item.name} $#{item.price}"
 end
 
+puts
 puts 'Do you want to know more about any of these options?'
 print "> "
-userInput = gets.chomp
+userInput = gets.chomp.downcase
 if userInput == 'yes'
     menuItems.each_with_index do |item, index|
         puts "#{index + 1}. #{item.description}"
@@ -87,18 +88,21 @@ order = []
 
 # p customerOrder
 
+puts
 puts "Time to make an order!"
-print "First off, what's your name? > "
+puts "First off, what's your name?"
+print "> "
 userName = gets.chomp
 userName = Customer.new(userName)
-puts "Awesome #{userName} What would you like to order?"
+puts
+puts "Awesome #{userName.name}, What would you like to order?"
+puts "Input the number of the Burger you'd like below"
+print "> "
 userOrder = gets.chomp.to_i 
 selection = menuItems[userOrder]
 order << selection
 
-p order
-
-p "Thanks just the #{menuItems.name} today? that will be #{menuItems.price}"
+p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price}"
 
 # menuItems.each_with_index do |index|
 #     puts "#{index}"

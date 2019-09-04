@@ -74,6 +74,8 @@ def menu(burger_info)
 				puts menuItems[userInput2].description
 				puts
 				puts 'Did you want to know more about anything else?'
+			else
+				puts "Incorrect input, please try again with (Yes/No)"
 			end
 		end
 		
@@ -93,6 +95,9 @@ def menu(burger_info)
 		print "> "
 		userOrder = gets.chomp.to_i-1
 		selection = menuItems[userOrder]
+		if userOrder != menuItems.length
+			"puts you've entered an incorrect number"
+		end
 		@order << selection
 		
 		puts

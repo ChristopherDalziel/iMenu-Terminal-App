@@ -20,7 +20,6 @@ class Customer
     def initialize(name)
         @name = name
         @order = []
-        # @payment
     end
 
 end
@@ -41,6 +40,10 @@ File.open(MENU, "r").each_with_index do |line, index|
     end
 end
 
+customer = true
+while customer == true do
+
+
 menuItems = []
 
 
@@ -55,13 +58,6 @@ end
 puts
 puts 'Do you want to know more about any of these options?'
 print "> "
-# Function works, shows all descriptions for all burgers
-# userInput = gets.strip.downcase
-# if userInput == 'yes'
-#     menuItems.each_with_index do |item, index|
-#         puts "#{index + 1}. #{item.description}"
-#     end
-# end
 
 running = true
 while running == true do
@@ -71,16 +67,19 @@ while running == true do
         break
     elsif userInput == 'yes'
         running = true
+        puts
         puts "Awesome, enter the number you'd like to know more about."
+        print "> "
     userInput2 = gets.chomp.to_i-1
     puts menuItems[userInput2].description
+    puts
     puts 'Did you want to know more about anything else?'
     end
 end
 
 
 
-order = []
+@order = []
 
 puts
 puts "Time to make an order!"
@@ -94,8 +93,9 @@ puts "Input the number of the Burger you'd like below"
 print "> "
 userOrder = gets.chomp.to_i-1
 selection = menuItems[userOrder]
-order << selection
+@order << selection
 
+puts
 p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
 print "> "
 
@@ -110,6 +110,7 @@ while userPayment == 0
     elsif userPayment < selection.price.to_i
         owed = selection.price.to_i - userPayment
         puts "I'm sorry you entered the incorrect amount by $#{owed} please try again"
+        puts
         userPayment = 0
     elsif userPayment > selection.price.to_i
         change = userPayment - selection.price.to_i
@@ -120,4 +121,19 @@ end
 
 File.open('output.csv', 'a+') do |line|
     line << "#{selection.name} is #{selection.price}" 
+end
+
+puts "Would you like to enter another customers order? (Yes/No)"
+print "> "
+customerQuestion = gets.chomp.downcase
+    if  customerQuestion != 'yes' or 'no'
+        puts 'you have entered an incorrect option please try again'
+        customerQuestion = gets.chomp.downcase
+    elsif customerQuestion == 'yes'
+        customer == true
+    else customerQuestion == 'no'
+        customer == false
+        'Thanks for using!'
+        break
+    end
 end

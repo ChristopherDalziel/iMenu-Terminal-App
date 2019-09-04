@@ -69,8 +69,6 @@ userInput = gets.chomp.downcase
 if userInput == 'yes'
     menuItems.each_with_index do |item, index|
         puts "#{index + 1}. #{item.description}"
-    else
-        userInput == 'no'
     end
 end
 
@@ -103,6 +101,10 @@ selection = menuItems[userOrder]
 order << selection
 
 p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price}"
+
+File.open('output.csv', 'a+') do |line|
+    line << "#{selection.name} is #{selection.price}" 
+end
 
 # menuItems.each_with_index do |index|
 #     puts "#{index}"

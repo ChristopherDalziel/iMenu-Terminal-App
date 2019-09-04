@@ -1,5 +1,9 @@
 class Menu_item
 
+    attr_accessor :name
+    attr_accessor :price
+    attr_accessor :description
+
     # @@instance_count = 0
 
     def initialize(name, description, price)
@@ -62,8 +66,19 @@ burger_info.each_with_index do | array, index |
 end
 
 menuItems.each_with_index do |item, index|
-    puts "#{index + 1} #{item(@name)}"
+    puts "#{index + 1}. #{item.name} $#{item.price}"
 end
+
+puts 'Do you want to know more about any of these options?'
+print "> "
+userInput = gets.chomp
+if userInput == 'yes'
+    menuItems.each_with_index do |item, index|
+        puts "#{index + 1}. #{item.description}"
+    elsif
+    end
+end
+
 
 # menuItems.each_with_index do |index|
 #     puts "#{index}"
@@ -74,12 +89,12 @@ end
 # puts "Lets make an order!"
 # print "> "
 
-userInput = gets.chomp.to_i
-if userInput > 1 && userInput <= menuItems.length
-    puts menuItems[userInput]
-else
-    puts "you've selected an incorrect number"
-end
+# userInput = gets.chomp.to_i
+# if userInput > 0 && userInput <= menuItems.length
+#     puts menuItems[userInput]
+# else
+#     puts "you've selected an incorrect number"
+# end
 
 
 

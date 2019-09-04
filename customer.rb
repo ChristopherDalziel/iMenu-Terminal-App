@@ -140,26 +140,3 @@ def menu(burger_info)
 end
 
 menu(burger_info)
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		# 	while customerQuestion != 'yes' || customerQuestion != 'no' do
-		# 		customerQuestion = gets.chomp.downcase
-		# 		if customerQuestion == 'yes'
-		# 			customer == true
-		# 		else 
-		# 			customer == false
-		# 			'Thanks for using!'
-		# 			break
-		# 		end
-		# 	end
-		# end
-		

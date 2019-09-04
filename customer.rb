@@ -55,16 +55,24 @@ end
 puts
 puts 'Do you want to know more about any of these options?'
 print "> "
-#Function works, shows all descriptions for all burgers
-# userInput = gets.strip.downcase
-# if userInput == 'yes'
-#     menuItems.each_with_index do |item, index|
-#         puts "#{index + 1}. #{item.description}"
+# Function works, shows all descriptions for all burgers
+userInput = gets.strip.downcase
+if userInput == 'yes'
+    menuItems.each_with_index do |item, index|
+        puts "#{index + 1}. #{item.description}"
+    end
+end
+
+# running = true
+# while running = true do
+#     userInput = gets.strip.downcase.to_i
+#     puts menuItems[userInput].description
+#     puts 'Did you want to know more about anything else?'
+#     if userInput.to_s = 'no'
+#         running = false
 #     end
 # end
 
-userInput = gets.strip.downcase.to_i
-p menuItems[userInput].description
 
 
 
@@ -87,7 +95,26 @@ order << selection
 p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
 print "> "
 
-userPayment = gets.chomp.to_i
+
+userPayment = 0
+while userPayment == 0
+    puts "Enter an amount"
+    userPayment = gets.chomp.to_i
+
+    if userPayment == selection.price.to_i
+        puts "Thank you! Order Complete"
+    elsif userPayment < selection.price.to_i
+        owed = selection.price.to_i - userPayment
+        puts "I'm sorry you entered the incorrect amount by $#{owed} please try again"
+        userPayment = 0
+    elsif userPayment > selection.price.to_i
+        change = userPayment - selection.price.to_i
+        puts "Here is your change of $#{change}"
+    end
+end
+
+# userPayment = gets.chomp.to_i
+
 
 # while userPayment != selection.price.to_i
 #     if userPayment == selection.price.to_i

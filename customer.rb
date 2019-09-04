@@ -24,20 +24,13 @@ class Menu_item
 end
 
 class Customer
-    def initialize(name, order)
+
+    attr_accessor :order
+    
+    def initialize(name)
         @name = name
-        @order = order
+        @order = []
         # @payment
-    end
-
-    def name
-        userName = gets.chomp
-        p name
-    end
-
-    def order
-        userOrder = gets.chomp.to_i
-        p userOrder
     end
 
 end
@@ -61,7 +54,7 @@ end
 
 
 menuItems = []
-burger_info.each_with_index do | array, index |
+burger_info.each_with_index do |array, index|
   menuItems << Menu_item.new(burger_info[index][0], burger_info[index][1], burger_info[index][2])
 end
 
@@ -75,10 +68,23 @@ userInput = gets.chomp
 if userInput == 'yes'
     menuItems.each_with_index do |item, index|
         puts "#{index + 1}. #{item.description}"
-    elsif
+    else
+        userInput == 'no'
     end
 end
 
+order = []
+
+puts "Time to make an order!"
+print "First off, what's your name? > "
+userName = gets.chomp
+puts "Awesome #{userName} What would you like to order?"
+userOrder = gets.chomp.to_i 
+selection = menuItems[userOrder]
+order << selection
+userName = Customer.new(userName)
+
+p order
 
 # menuItems.each_with_index do |index|
 #     puts "#{index}"

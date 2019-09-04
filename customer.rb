@@ -18,14 +18,14 @@ class Menu_item
     #     "Name: #{@name} Description: #{@description} Price: $#{@price}"
     # end
 
-    def self.instance_count
-        @@instance_count
-    end
+    # def self.instance_count
+    #     @@instance_count
+    # end
 end
 
 class Customer
 
-    attr_accessor :order
+    attr_accessor :name
     
     def initialize(name)
         @name = name
@@ -75,16 +75,30 @@ end
 
 order = []
 
+# def customerOrder
+#     puts "Time to make an order, first off whats your name?"
+#     print "> "
+#     userName = gets.chomp
+#     puts "Awesome #{userName}, What would you like to order?"
+#     puts "Input the number of the Burger you'd like below"
+#     userOrder = gets.chomp.to_i
+#     order << menuItems[userOrder]
+# end
+
+# p customerOrder
+
 puts "Time to make an order!"
 print "First off, what's your name? > "
 userName = gets.chomp
+userName = Customer.new(userName)
 puts "Awesome #{userName} What would you like to order?"
 userOrder = gets.chomp.to_i 
 selection = menuItems[userOrder]
 order << selection
-userName = Customer.new(userName)
 
 p order
+
+p "Thanks just the #{menuItems.name} today? that will be #{menuItems.price}"
 
 # menuItems.each_with_index do |index|
 #     puts "#{index}"

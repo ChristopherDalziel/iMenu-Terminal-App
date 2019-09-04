@@ -93,16 +93,43 @@ def menu(burger_info)
 		puts "Awesome #{userName.name}, What would you like to order?"
 		puts "Input the number of the Burger you'd like below"
 		print "> "
-		userOrder = gets.chomp.to_i-1
-		selection = menuItems[userOrder]
-		if userOrder != menuItems.length
-			"puts you've entered an incorrect number"
+
+		userOrder = 0
+		while userOrder == 0
+			# puts "Awesome #{userName.name}, What would you like to order?"
+			# puts "Input the number of the Burger you'd like below"
+			# print "> "
+			userOrder = gets.chomp.to_i-1
+				if userOrder <= menuItems.length
+					selection = menuItems[userOrder]
+					puts 
+					p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
+					print "> "
+				else
+					puts
+					puts "You've entered an incorrect number, Please try again."
+					print "> "
+				userOrder = 0	
+			end
 		end
+
+
+		# userOrder = gets.chomp.to_i-1
+		# if userOrder <= menuItems.length
+		# 	selection = menuItems[userOrder]
+		# 	puts 
+		# 	p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
+		# 	print "> "
+		# else
+		# 	puts "You've entered an incorrect number"
+		# end
+		
+		
 		@order << selection
 		
 		puts
-		p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
-		print "> "
+		# p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
+		# print "> "
 		
 		
 		userPayment = 0

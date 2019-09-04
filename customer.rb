@@ -55,12 +55,17 @@ end
 puts
 puts 'Do you want to know more about any of these options?'
 print "> "
-userInput = gets.strip.downcase
-if userInput == 'yes'
-    menuItems.each_with_index do |item, index|
-        puts "#{index + 1}. #{item.description}"
-    end
-end
+#Function works, shows all descriptions for all burgers
+# userInput = gets.strip.downcase
+# if userInput == 'yes'
+#     menuItems.each_with_index do |item, index|
+#         puts "#{index + 1}. #{item.description}"
+#     end
+# end
+
+userInput = gets.strip.downcase.to_i
+p menuItems[userInput].description
+
 
 
 order = []

@@ -1,39 +1,23 @@
-MENU = "menu.csv"
-
-headings = []
-burger_info = []
-
-File.open(MENU, "r").each_with_index do |line, index|
-    if line.length > 0 
-        if index == 0
-            headings << line.split(",")
-        else
-            burger_info << line.split(",")
-        end
-    end
-end
-
 class Menu_item
+
+    # @@instance_count = 0
+
     def initialize(name, description, price)
         @name = name
         @description = description
         @price = price
+
+        # @@instance_count += 1
     end
 
-    def to_s
-        "Name: #{@name}, Description: #{@description}, Price: $#{@price}"
+    # def to_s
+    #     "Name: #{@name} Description: #{@description} Price: $#{@price}"
+    # end
+
+    def self.instance_count
+        @@instance_count
     end
-    
 end
-
-menuItems = []
-burger_info.each_with_index do | array, index |
-  menuItems << Menu_item.new(burger_info[index][0], burger_info[index][1], burger_info[index][2])
-end
-
-
-# p menuItems[1]
-# p menuItems[5]
 
 class Customer
     def initialize(name, order)
@@ -54,15 +38,48 @@ class Customer
 
 end
 
-puts "Lets make an order!"
-print "> "
+
+
+MENU = "menu.csv"
+
+headings = []
+burger_info = []
+
+File.open(MENU, "r").each_with_index do |line, index|
+    if line.length > 0 
+        if index == 0
+            headings << line.split(",")
+        else
+            burger_info << line.split(",")
+        end
+    end
+end
+
+
+menuItems = []
+burger_info.each_with_index do | array, index |
+  menuItems << Menu_item.new(burger_info[index][0], burger_info[index][1], burger_info[index][2])
+end
+
+menuItems.each_with_index do |item, index|
+    puts "#{index + 1} #{item(@name)}"
+end
+
+# menuItems.each_with_index do |index|
+#     puts "#{index}"
+#     puts menuItems
+# end
+
+
+# puts "Lets make an order!"
+# print "> "
 
 userInput = gets.chomp.to_i
-    if userInput > 1 && userInput <= menuItems.length
-        puts menuItems[userInput]
-    else
-        puts "you've selected an incorrect number"
-    end
+if userInput > 1 && userInput <= menuItems.length
+    puts menuItems[userInput]
+else
+    puts "you've selected an incorrect number"
+end
 
 
 

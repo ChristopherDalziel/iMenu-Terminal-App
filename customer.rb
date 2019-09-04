@@ -4,23 +4,13 @@ class Menu_item
     attr_accessor :price
     attr_accessor :description
 
-    # @@instance_count = 0
-
     def initialize(name, description, price)
         @name = name
         @description = description
         @price = price
-
-        # @@instance_count += 1
     end
 
-    # def to_s
-    #     "Name: #{@name} Description: #{@description} Price: $#{@price}"
-    # end
 
-    # def self.instance_count
-    #     @@instance_count
-    # end
 end
 
 class Customer
@@ -34,7 +24,6 @@ class Customer
     end
 
 end
-
 
 
 MENU = "menu.csv"
@@ -52,10 +41,11 @@ File.open(MENU, "r").each_with_index do |line, index|
     end
 end
 
-
 menuItems = []
+
+
 burger_info.each_with_index do |array, index|
-  menuItems << Menu_item.new(burger_info[index][0], burger_info[index][1], burger_info[index][2])
+    menuItems << Menu_item.new(burger_info[index][0], burger_info[index][1], burger_info[index][2])
 end
 
 menuItems.each_with_index do |item, index|
@@ -65,26 +55,15 @@ end
 puts
 puts 'Do you want to know more about any of these options?'
 print "> "
-userInput = gets.chomp.downcase
+userInput = gets.strip.downcase
 if userInput == 'yes'
     menuItems.each_with_index do |item, index|
         puts "#{index + 1}. #{item.description}"
     end
 end
 
+
 order = []
-
-# def customerOrder
-#     puts "Time to make an order, first off whats your name?"
-#     print "> "
-#     userName = gets.chomp
-#     puts "Awesome #{userName}, What would you like to order?"
-#     puts "Input the number of the Burger you'd like below"
-#     userOrder = gets.chomp.to_i
-#     order << menuItems[userOrder]
-# end
-
-# p customerOrder
 
 puts
 puts "Time to make an order!"
@@ -100,48 +79,23 @@ userOrder = gets.chomp.to_i
 selection = menuItems[userOrder]
 order << selection
 
-p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price}"
+p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
+print "> "
+
+userPayment = gets.chomp.to_i
+
+# while userPayment != selection.price.to_i
+#     if userPayment == selection.price.to_i
+#         puts "Thank you! Order Complete"
+#     elsif userPayment < selection.price.to_i
+#         owed = selection.price.to_i - userPayment
+#         puts "I'm sorry you've still got $#{owed} left to pay"
+#     elsif userPayment > selection.price.to_i
+#         change = userPayment - selection.price.to_i
+#         puts "Here is your change of $#{change}"
+#     end
+# end
 
 File.open('output.csv', 'a+') do |line|
     line << "#{selection.name} is #{selection.price}" 
 end
-
-# menuItems.each_with_index do |index|
-#     puts "#{index}"
-#     puts menuItems
-# end
-
-
-# puts "Lets make an order!"
-# print "> "
-
-# userInput = gets.chomp.to_i
-# if userInput > 0 && userInput <= menuItems.length
-#     puts menuItems[userInput]
-# else
-#     puts "you've selected an incorrect number"
-# end
-
-
-
-
-
-
-
-
-
-# split_again = []
-
-# items.each_with_index do |each_item|
-#     split_again << Menu_items.new(each_item[1], each_item[2], each_item[3], each_item[4])
-# end
-
-
-# puts split_again
-
-# test = Menu_items.new(items[1], items[2], items[3], items[4])
-
-# p test
-
-
-

@@ -71,14 +71,19 @@ def menu(burger_info)
 				puts "Awesome, enter the number you'd like to know more about."
 				print "> "
 				userInput2 = gets.chomp.to_i-1
+				if userInput2 <= menuItems.length
 				puts menuItems[userInput2].description
 				puts
 				puts 'Did you want to know more about anything else?'
+				elsif userInput2 > menuItems.length
+					puts
+					puts "Error, incorrect number input, would you like to try again?"
+					print "> "
+				end
 			else
 				puts "Incorrect input, please try again with (Yes/No)"
 			end
 		end
-		
 		
 		
 		@order = []
@@ -96,9 +101,6 @@ def menu(burger_info)
 
 		userOrder = 0
 		while userOrder == 0
-			# puts "Awesome #{userName.name}, What would you like to order?"
-			# puts "Input the number of the Burger you'd like below"
-			# print "> "
 			userOrder = gets.chomp.to_i-1
 				if userOrder <= menuItems.length
 					selection = menuItems[userOrder]
@@ -112,26 +114,10 @@ def menu(burger_info)
 				userOrder = 0	
 			end
 		end
-
-
-		# userOrder = gets.chomp.to_i-1
-		# if userOrder <= menuItems.length
-		# 	selection = menuItems[userOrder]
-		# 	puts 
-		# 	p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
-		# 	print "> "
-		# else
-		# 	puts "You've entered an incorrect number"
-		# end
-		
 		
 		@order << selection
 		
-		puts
-		# p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
-		# print "> "
-		
-		
+
 		userPayment = 0
 		while userPayment == 0
 			puts "Enter an amount"

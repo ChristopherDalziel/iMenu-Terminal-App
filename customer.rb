@@ -1,7 +1,12 @@
 require "argv"
 require "colorize"
+require "artii"
 
 puts "Welcome #{ARGV[0]}"
+
+ARTII = Artii::Base.new :font => 'big'
+ puts ARTII.asciify("Burgs")
+
 puts "-----------------------------------------------------"
 
 class Menu_item

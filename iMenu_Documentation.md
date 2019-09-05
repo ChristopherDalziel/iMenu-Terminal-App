@@ -1,11 +1,9 @@
-# Terminal App - Assignment 1
-### Christopher Dalziel
-
-iMenu
+# iMenu - Terminal App(Assignment 1)
+Christopher Dalziel, Due: Friday 6th, September 2019
 
 ## Pitch 
 iMenu is created to be a easy to use POS sale system that can be used directly by the customer (or with slight modification a trained CSR)
-The built in menu datacase makes changing your menu and breeze! Alls you need to do is punch in a name, description and price of an item and the app will do the rest! Removal is just as easy. In the future we fully intend to bring even further options to add more databases over all, and have the ability for the customer to add/remove items from their order.
+The built in menu datacase makes changing your menu and breeze! Alls you need to do is punch in a name, description and price of an item and the app will do the rest! Removing an item is just as easy. After the iMenu app takes payment from your customer it exports that data for you to an easy to read output file, which can be customized to output any of the data that is input via the app. In the future extra functionallity will include output data calculated in app to show profits and other relevant data and further options to add more databases, multiple menus, and have the ability for the customer to add/remove items from their order.
 
 ## List of features 
 1. Database menu/Display

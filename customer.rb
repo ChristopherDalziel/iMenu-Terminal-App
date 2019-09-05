@@ -5,32 +5,9 @@ require "artii"
 ARTII = Artii::Base.new :font => 'big'
  puts ARTII.asciify("BurgerLand")
  puts "Powered by iMenu"
-puts "-----------------------------------------------------"
+puts "---------------------------------------------------------"
 
-
-class Menu_item
-	attr_accessor :name
-	attr_accessor :price
-	attr_accessor :description
-	
-	def initialize(name, description, price)
-		@name = name
-		@description = description
-		@price = price
-	end
-end
-
-class Customer
-	
-	attr_accessor :name
-	
-	def initialize(name)
-		@name = name
-		@order = []
-	end
-end
-
-
+require_relative 'iMenu_Classes.rb'
 MENU = "menu.csv"
 OUTPUT = "output.csv"
 
@@ -60,11 +37,11 @@ def handle_exit(burger_info)
 		puts "Thanks for using!".colorize(:green)
 		exit
 	else 
+		puts "Sorry that was an incorrect input, please try again.".colorize(:red)
 		handle_exit(burger_info)
 		exit
 	end
 end 
-
 
 def more_information_about_burgers(burger_info, menuItems)	
 	menuItems.each_with_index do |item, index|
@@ -122,6 +99,21 @@ def menu(burger_info)
 	puts "Awesome #{userName.name}, What would you like to order?"
 	puts "Input the number of the Burger you'd like below"
 	print "> "
+
+	#broken
+	# while user_is_ordering = true
+	# 	userOrder = STDIN.gets.chomp.to_i - 1
+	# 		if userOrder == -1 || userOrder >= menuItems.length
+	# 			selection = menuItems[userOrder]
+	# 			puts 
+	# 			puts "Thanks #{userName.name}! You ordered the #{selection.name}, and it costs $#{selection.price}."
+	# 			user_is_ordering = false
+	# 		else
+	# 			puts
+	# 			puts "You've entered an incorrect number, Please try again.".colorize(:red)
+	# 			print "> "
+	# 	end
+	# end
 
 	user_is_ordering = true
 	while user_is_ordering

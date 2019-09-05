@@ -1,3 +1,8 @@
+require "argv"
+
+puts "Welcome #{ARGV[0]}"
+puts "-----------------------------------------------------"
+
 class Menu_item
 	
 	attr_accessor :name
@@ -61,7 +66,7 @@ def menu(burger_info)
 		
 		running = true
 		while running == true do
-			userInput = gets.chomp.downcase
+			userInput = STDIN.gets.chomp.downcase
 			if userInput == 'no'
 				running = false
 				break
@@ -70,7 +75,7 @@ def menu(burger_info)
 				puts
 				puts "Awesome, enter the number you'd like to know more about."
 				print "> "
-				userInput2 = gets.chomp.to_i-1
+				userInput2 = STDIN.gets.chomp.to_i-1
 				if userInput2 <= menuItems.length
 				puts menuItems[userInput2].description
 				puts
@@ -92,7 +97,7 @@ def menu(burger_info)
 		puts "Time to make an order!"
 		puts "First off, what's your name?"
 		print "> "
-		userName = gets.chomp
+		userName = STDIN.gets.chomp
 		userName = Customer.new(userName)
 		puts
 		puts "Awesome #{userName.name}, What would you like to order?"
@@ -101,7 +106,7 @@ def menu(burger_info)
 
 		userOrder = 0
 		while userOrder == 0
-			userOrder = gets.chomp.to_i-1
+			userOrder = STDIN.gets.chomp.to_i-1
 				if userOrder <= menuItems.length
 					selection = menuItems[userOrder]
 					puts 
@@ -121,7 +126,7 @@ def menu(burger_info)
 		userPayment = 0
 		while userPayment == 0
 			puts "Enter an amount"
-			userPayment = gets.chomp.to_i
+			userPayment = STDIN.gets.chomp.to_i
 			
 			if userPayment == selection.price.to_i
 				puts "Thank you! Order Complete"
@@ -144,7 +149,7 @@ def menu(burger_info)
 		puts "Would you like to enter another customers order? (Yes/No)"
 		print "> "
 		
-		customerQuestion = gets.chomp.downcase
+		customerQuestion = STDIN.gets.chomp.downcase
 		if customerQuestion == 'yes'
 			puts `clear`
 			menu(burger_info)

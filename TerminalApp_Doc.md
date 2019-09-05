@@ -2,7 +2,6 @@
 ### Christopher Dalziel
 
 
-
 ## Pitch 
 
 
@@ -16,14 +15,22 @@
 
 ## Development Plan
 Begin app with a basic linked csv file for the menu, put some basic information in this file (eg. name, description, price, sku(?)). Link the files and seperate the information from the csv menu file so it can be printed appealingly into a menu. 
+- Removed sku for app simplicity/requirement although if required in the future I'm sure it could be implimented
 
-Allow the user to select an item from the menu to purchase and make changes before purchasing. (Add extra condiments etc). 
+Allow the user to select an item from the menu to purchase and make changes before purchasing. (Add extra condiments, drinks etc).
+- I thought of a few ways of doing this, seperate menus in other csv files, adding the total together before completeing the order, would probably be the easiest, other class options potentionally. A hash? 
 
 App asks for a payment and returns a change value of the user attempted to pay too much, system asks for more money if the purchase.
+- App currently does this expanding on this idea however I touch on at the bottom of the plan using ARGV to impliment a till or similiar options.
 
 Upon the payment been completed the app will process and export information to a seperaye output csv, the purpose of this will be to track purchases, profits or just general incoming money. etc. 
+- App currently does export data post transaction and can export any data taken in during the process if desired, In the future I'd like to improve on this by including a profit output instead which would be calculated in app, potentionally combined at the end of day or when the user desires.
 
 Then ask if there is another order and loops back to the top of the code if required.
+- App achieves this
+
+Using ARGV there are some things we could impliment - Removing sections of the app to make service easier for a cashier or for a user who is aware of the menu/system already.
+I also thought about adding a cashier options would take or remove an amount from a till amount added at the begining of code.
 
 ## How the user will interact with your app 
 Open opening the app a pre-installed menu will be displayed, the user will be able to ask for further info on each intem displayed here or chose to move on without it. The app will them ask the user to place an order of an item displayed off the menu. In the future the menu will be adjusted to include multiple's of the same items, and further items/extra menu's (Drinks, Deserts etc.). 

@@ -1,9 +1,9 @@
 require "argv"
 require "colorize"
 require "artii"
-require "pry"
 
 # puts "Welcome to #{ARGV[0]}"
+
 
 ARTII = Artii::Base.new :font => 'big'
  puts ARTII.asciify("Burgs")
@@ -56,6 +56,8 @@ def handle_exit(burger_info)
 		puts `clear`
 		return menu(burger_info)
 	elsif customerQuestion == "no"
+		puts
+		puts "Thanks for using!".colorize(:green)
 		exit
 	else 
 		handle_exit
@@ -85,8 +87,8 @@ def more_information_about_burgers(burger_info, menuItems)
 			userInput2 = STDIN.gets.chomp.to_i - 1
 			if userInput2 == -1 || userInput2 >= menuItems.length
 				puts
-				puts "Error, incorrect number input, would you like to try again?"
-				print "> "
+				puts "Error, incorrect number input, would you like to try again?".colorize(:red)
+				print "> ".colorize(:red)
 			else 
 				puts menuItems[userInput2].description
 				puts
@@ -100,8 +102,6 @@ end
 
 
 def menu(burger_info)
-	# customer = true
-	# while customer == true do
 	menuItems = []
 	burger_info.each_with_index do |array, index|
 		menuItems << Menu_item.new(burger_info[index][0], burger_info[index][1], burger_info[index][2])
@@ -128,7 +128,7 @@ def menu(burger_info)
 			if userOrder <= menuItems.length
 				selection = menuItems[userOrder]
 				puts 
-				puts "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price}."
+				puts "Thanks #{userName.name}! You ordered the #{selection.name}, and it costs $#{selection.price}."
 				user_is_ordering = false
 			else
 				puts
@@ -138,7 +138,7 @@ def menu(burger_info)
 	end
 	
 	@order << selection
-	
+
 	userPayment = 0
 	while userPayment == 0
 		puts
@@ -166,7 +166,6 @@ def menu(burger_info)
 		line << "#{selection.name} Cost:$ #{selection.price}" 
 	end
 	handle_exit(burger_info)
-	# end
 end
 
 menu(burger_info)

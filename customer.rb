@@ -159,11 +159,11 @@ def menu(burger_info)
 		print "> "
 		
 		customerQuestion = gets.chomp.downcase
-		
 		if customerQuestion == 'yes'
 			puts `clear`
 			menu(burger_info)
 		else
+			customerQuestion == 'no'
 			puts "Thanks for using"
 			customer == false
 			break

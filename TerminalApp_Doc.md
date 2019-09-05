@@ -15,6 +15,15 @@
 6. Print orders for the day
 
 ## Development Plan
+Begin app with a basic linked csv file for the menu, put some basic information in this file (eg. name, description, price, sku(?)). Link the files and seperate the information from the csv menu file so it can be printed appealingly into a menu. 
+
+Allow the user to select an item from the menu to purchase and make changes before purchasing. (Add extra condiments etc). 
+
+App asks for a payment and returns a change value of the user attempted to pay too much, system asks for more money if the purchase.
+
+Upon the payment been completed the app will process and export information to a seperaye output csv, the purpose of this will be to track purchases, profits or just general incoming money. etc. 
+
+Then ask if there is another order and loops back to the top of the code if required.
 
 ## How the user will interact with your app 
 Open opening the app a pre-installed menu will be displayed, the user will be able to ask for further info on each intem displayed here or chose to move on without it. The app will them ask the user to place an order of an item displayed off the menu. In the future the menu will be adjusted to include multiple's of the same items, and further items/extra menu's (Drinks, Deserts etc.). 

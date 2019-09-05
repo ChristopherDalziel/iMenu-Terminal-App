@@ -2,7 +2,7 @@ require "argv"
 require "colorize"
 require "artii"
 
-puts "Welcome #{ARGV[0]}"
+puts "Welcome to #{ARGV[0]}"
 
 ARTII = Artii::Base.new :font => 'big'
  puts ARTII.asciify("Burgs")
@@ -67,7 +67,7 @@ def menu(burger_info)
 		end
 		
 		puts
-		puts 'Do you want to know more about any of these options?'
+		puts 'Do you want to know more about any of these options? (Yes/No)'
 		print "> "
 		
 		running = true
@@ -100,7 +100,7 @@ def menu(burger_info)
 		@order = []
 		
 		puts
-		puts "Time to make an order!"
+		puts "Okay, Time to make an order!"
 		puts "First off, what's your name?"
 		print "> "
 		userName = STDIN.gets.chomp
@@ -151,9 +151,9 @@ def menu(burger_info)
 			end
 		end
 		
-		
+
 		File.open('output.csv', 'a+') do |line|
-			line << "#{selection.name} is #{selection.price}" 
+			line << "#{selection.name} Cost:$ #{selection.price}" 
 		end
 		
 		puts

@@ -1,22 +1,25 @@
 # Terminal App - Assignment 1
 ### Christopher Dalziel
 
-menu something
+
 
 ## Pitch 
 
 
 ## List of features 
 1. Database menu/Display
-2. Customer order input
-3. Change order
-4. Pay
-5. Print orders for the day
+2. Further database display
+3. Customer order input
+4. Change order
+5. Pay
+6. Print orders for the day
 
-##How the user will interact with your app 
-User will open the app, app will display menu options and ask for an order. 
-Once the user has input an order the app will confirm and ask if any changes need to be made. 
-App will ask for a payment input
+## Development Plan
+
+## How the user will interact with your app 
+Open opening the app a pre-installed menu will be displayed, the user will be able to ask for further info on each intem displayed here or chose to move on without it. The app will them ask the user to place an order of an item displayed off the menu. In the future the menu will be adjusted to include multiple's of the same items, and further items/extra menu's (Drinks, Deserts etc.). 
+Once the user has has chosen their item(s) the system will congradulate, repeat their order and ask for a payment input. If the user puts in the correct amount the app will return change or return their input to them if it's below the required, an amount equal to the required will proceed. 
+Once the order is completed the order will be exported to a seperate csv file for records, which at a later date can be improved to track profits, order numbers, etc. Then the app will ask if there is another customer/order and repeat or end.
 
 ### Status Update 1
 Hey Rachael/Harrison.
@@ -36,3 +39,5 @@ Still need to implement a gem and look at documentation but I have made a very s
 
 Thanks, 
 Christopher Dalziel
+
+### Status Update 2

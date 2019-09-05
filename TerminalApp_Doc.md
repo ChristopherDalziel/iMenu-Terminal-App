@@ -4,7 +4,8 @@
 iMenu
 
 ## Pitch 
-
+iMenu is created to be a easy to use POS sale system that can be used directly by the customer (or with slight modification a trained CSR)
+The built in menu datacase makes changing your menu and breeze! Alls you need to do is punch in a name, description and price of an item and the app will do the rest! Removal is just as easy. In the future we fully intend to bring even further options to add more databases over all, and have the ability for the customer to add/remove items from their order.
 
 ## List of features 
 1. Database menu/Display

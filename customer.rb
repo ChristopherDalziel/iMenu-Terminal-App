@@ -3,9 +3,11 @@ require "colorize"
 require "artii"
 
 ARTII = Artii::Base.new :font => 'big'
+puts `clear`
+ puts "Welcome to"
  puts ARTII.asciify("BurgerLand")
  puts "Powered by iMenu"
-puts "-----------------------------------------------------"
+puts "----------------------------------------------------------"
 
 
 class Menu_item
@@ -60,7 +62,8 @@ def handle_exit(burger_info)
 		puts "Thanks for using!".colorize(:green)
 		exit
 	else 
-		handle_exit
+		puts "Sorry that was an incorrect input, please try again.".colorize(:red)
+		handle_exit(burger_info)
 	end
 end 
 

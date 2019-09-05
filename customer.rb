@@ -79,7 +79,7 @@ def menu(burger_info)
 			elsif userInput == 'yes'
 				running = true
 				puts
-				puts "Awesome, enter the number you'd like to know more about."
+				puts "Awesome, enter the number of the burger you'd like to know more about."
 				print "> "
 				userInput2 = STDIN.gets.chomp.to_i-1
 				if userInput2 <= menuItems.length
@@ -116,8 +116,7 @@ def menu(burger_info)
 				if userOrder <= menuItems.length
 					selection = menuItems[userOrder]
 					puts 
-					puts "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
-					print "> "
+					puts "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price}."
 				else
 					puts
 					puts "You've entered an incorrect number, Please try again.".colorize(:red)
@@ -131,18 +130,23 @@ def menu(burger_info)
 
 		userPayment = 0
 		while userPayment == 0
-			puts "Enter an amount"
+			puts
+			puts "Please enter the amount owed below"
+			print "> "
 			userPayment = STDIN.gets.chomp.to_i
 			
 			if userPayment == selection.price.to_i
+				puts
 				puts "Thank you! Order Complete".colorize(:green)
 			elsif userPayment < selection.price.to_i
 				owed = selection.price.to_i - userPayment
+				puts
 				puts "I'm sorry you entered the incorrect amount by $#{owed} please try again".colorize(:red)
 				puts
 				userPayment = 0
 			elsif userPayment > selection.price.to_i
 				change = userPayment - selection.price.to_i
+				puts
 				puts "Here is your change of $#{change}"
 			end
 		end
@@ -152,6 +156,7 @@ def menu(burger_info)
 			line << "#{selection.name} is #{selection.price}" 
 		end
 		
+		puts
 		puts "Would you like to enter another customers order? (Yes/No)"
 		print "> "
 		
@@ -163,6 +168,7 @@ def menu(burger_info)
 			customerQuestion == 'no'
 			puts
 			puts "Thanks for using"
+			puts
 			customer == false
 			break
 		end

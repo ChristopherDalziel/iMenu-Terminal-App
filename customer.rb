@@ -1,4 +1,5 @@
 require "argv"
+require "colorize"
 
 puts "Welcome #{ARGV[0]}"
 puts "-----------------------------------------------------"
@@ -86,7 +87,7 @@ def menu(burger_info)
 					print "> "
 				end
 			else
-				puts "Incorrect input, please try again with (Yes/No)"
+				puts "Incorrect input, please try again with (Yes/No)".colorize(:red)
 			end
 		end
 		
@@ -110,11 +111,11 @@ def menu(burger_info)
 				if userOrder <= menuItems.length
 					selection = menuItems[userOrder]
 					puts 
-					p "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
+					puts "Thanks #{userName.name}! You ordered the #{selection.name} and it costs $#{selection.price} Please make your payment now by typing in an amount" 
 					print "> "
 				else
 					puts
-					puts "You've entered an incorrect number, Please try again."
+					puts "You've entered an incorrect number, Please try again.".colorize(:red)
 					print "> "
 				userOrder = 0	
 			end
@@ -129,10 +130,10 @@ def menu(burger_info)
 			userPayment = STDIN.gets.chomp.to_i
 			
 			if userPayment == selection.price.to_i
-				puts "Thank you! Order Complete"
+				puts "Thank you! Order Complete".colorize(:green)
 			elsif userPayment < selection.price.to_i
 				owed = selection.price.to_i - userPayment
-				puts "I'm sorry you entered the incorrect amount by $#{owed} please try again"
+				puts "I'm sorry you entered the incorrect amount by $#{owed} please try again".colorize(:red)
 				puts
 				userPayment = 0
 			elsif userPayment > selection.price.to_i
@@ -155,6 +156,7 @@ def menu(burger_info)
 			menu(burger_info)
 		else
 			customerQuestion == 'no'
+			puts
 			puts "Thanks for using"
 			customer == false
 			break

@@ -2,12 +2,11 @@ require "argv"
 require "colorize"
 require "artii"
 
-# puts "Welcome to #{ARGV[0]}"
-
-
 ARTII = Artii::Base.new :font => 'big'
- puts ARTII.asciify("Burgs")
+ puts ARTII.asciify("BurgerLand")
+ puts "Powered by iMenu"
 puts "-----------------------------------------------------"
+
 
 class Menu_item
 	attr_accessor :name
@@ -33,6 +32,7 @@ end
 
 
 MENU = "menu.csv"
+OUTPUT = "output.csv"
 
 headings = []
 burger_info = []
@@ -63,6 +63,7 @@ def handle_exit(burger_info)
 		handle_exit
 	end
 end 
+
 
 def more_information_about_burgers(burger_info, menuItems)	
 	menuItems.each_with_index do |item, index|
@@ -100,16 +101,15 @@ def more_information_about_burgers(burger_info, menuItems)
 	end
 end 
 
-
 def menu(burger_info)
 	menuItems = []
 	burger_info.each_with_index do |array, index|
 		menuItems << Menu_item.new(burger_info[index][0], burger_info[index][1], burger_info[index][2])
 	end
 
-	if ARGV[0] == "information"
+	if ARGV[0] == "show_menu"
 		more_information_about_burgers(burger_info, menuItems)
-	end 
+	end
 	@order = []
 	puts
 	puts "Okay, Time to make an order!"
@@ -162,7 +162,7 @@ def menu(burger_info)
 		end
 	end
 	
-	File.open('output.csv', 'a+') do |line|
+	File.open(OUTPUT, 'a+') do |line|
 		line << "#{selection.name} Cost:$ #{selection.price}" 
 	end
 	handle_exit(burger_info)

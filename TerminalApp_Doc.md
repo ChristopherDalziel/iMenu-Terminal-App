@@ -1,6 +1,7 @@
 # Terminal App - Assignment 1
 ### Christopher Dalziel
 
+iMenu
 
 ## Pitch 
 
@@ -30,7 +31,7 @@ Then ask if there is another order and loops back to the top of the code if requ
 - App achieves this
 
 Using ARGV there are some things we could impliment - Removing sections of the app to make service easier for a cashier or for a user who is aware of the menu/system already.
-I also thought about adding a cashier options would take or remove an amount from a till amount added at the begining of code.
+- I also thought about adding a cashier options would take or remove an amount from a till amount added at the begining of code.
 
 ## How the user will interact with your app 
 Open opening the app a pre-installed menu will be displayed, the user will be able to ask for further info on each intem displayed here or chose to move on without it. The app will them ask the user to place an order of an item displayed off the menu. In the future the menu will be adjusted to include multiple's of the same items, and further items/extra menu's (Drinks, Deserts etc.). 
@@ -57,3 +58,16 @@ Thanks,
 Christopher Dalziel
 
 ### Status Update 2
+Hey Harrison/Rach 
+
+Just sending you my second status update. 
+
+I’m currently happy with where my app is sitting and I’m now focusing on all the documentation that goes with it. 
+Feel like I’ve touch on almost all of the things, following through using my trello. I feel like I may have some questions about the format of the files and how they’re supposed to be split because I feel like a few people had a few different ideas? 
+
+I still need to automate my app. 
+
+I think that’s everything, see you tomorrow! 
+
+Thanks,
+Chris

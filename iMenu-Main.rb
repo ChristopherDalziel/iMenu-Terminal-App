@@ -1,5 +1,6 @@
 require 'colorize'
 require 'artii'
+require 'pry'
 
 ARTII = Artii::Base.new font: 'big'
 puts `clear`
@@ -106,7 +107,7 @@ def menu(menu_info)
   user_is_ordering = true
   while user_is_ordering
     userOrder = STDIN.gets.chomp.to_i - 1
-    if userOrder <= menuItems.length
+    if userOrder > -1 && userOrder <= menuItems.length
       selection = menuItems[userOrder]
       puts
       puts "Thanks #{userName.name.capitalize}! You ordered the #{selection.name}, and it costs $#{selection.price}."
@@ -116,7 +117,7 @@ def menu(menu_info)
       puts "You've entered an incorrect number, Please try again.".colorize(:red)
       print '> '
     end
-  end
+  end 
 
   @order << selection
 

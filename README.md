@@ -35,9 +35,6 @@ Error handling with iMenu is easy, since we always have an on screen display we 
 If an error is ever made during a transaction (Example; payment error) and the customer made an incorrect payment or purchase all history is inside `output-iMenu.csv`. 
 Incase of a major error, please if possible screen grab your error code (or written, if screen grab isn't possible) and email to `iMenu-errors@outlook.com`, we will aim to get back to you within 48 hours.
 
-### Known Bugs
-I am currently aware of a bug of been able to add a random input when making a burger selection (Example: "siognirj" will output a result), I am still working to fix this, at this time.
-
 Check back for new features soon!
 
 ## Development Plan

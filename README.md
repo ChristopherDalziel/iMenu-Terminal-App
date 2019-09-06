@@ -16,7 +16,7 @@ The built in menu datacase makes changing your menu and breeze! Alls you need to
 # iMenu - Users Guide
 
 ## Install 
-Double click the `install-iMenu.sh` file for automated install. 
+Go to your systems terminal, move to the directory where you've downloaded the files to, then type into the terminal `bash build.sh` this will begin installation of iMenu and all required gems to run. Other system requirements listed below.
 Required gems: colorize, artii and argv (will install automatically if not already on your system).
 
 ### System Requirements 

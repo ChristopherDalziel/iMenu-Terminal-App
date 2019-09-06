@@ -130,7 +130,7 @@ def menu(menu_info)
       puts
       puts "You've entered an incorrect number, Please try again.".colorize(:red)
       print '> '
-  end
+    end
   end
 
   @order << selection

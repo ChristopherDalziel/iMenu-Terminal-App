@@ -7,9 +7,9 @@ The built in menu datacase makes changing your menu and breeze! Alls you need to
 
 ## List of features 
 1. Database menu/Display
-2. Further database display
+2. Further database display (Multiple Menu's, Future)
 3. Customer order input
-4. Change order
+4. Change order (Future)
 5. Pay
 6. Print orders for the day
 
@@ -70,3 +70,8 @@ I think that’s everything, see you tomorrow!
 
 Thanks,
 Chris
+
+### Links
+GitHub: 'https://github.com/ChristopherDalziel/t_app'
+
+Trello: 'https://trello.com/b/n96kg5Td/terminal-app'

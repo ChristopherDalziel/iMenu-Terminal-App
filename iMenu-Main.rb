@@ -12,9 +12,9 @@ puts 'Powered by iMenu'
 puts '---------------------------------------------------------'
 puts
 
-require_relative 'iMenu_Classes.rb'
-MENU = 'menu.csv'
-OUTPUT = 'output.csv'
+require_relative 'iMenu-Classes.rb'
+MENU = 'menu-iMenu.csv'
+OUTPUT = 'output-iMenu.csv'
 
 headings = []
 burger_info = []

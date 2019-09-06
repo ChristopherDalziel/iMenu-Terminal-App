@@ -1,11 +1,10 @@
 chmod +x ./build.sh
 
 mkdir dist
-cp .customer.rb ./dist
-cp .iMenu_Classes.rb ./dist
-cp .menu.csv ./dist
-cp .output.csv ./dist
-cp .iMenu_UsersGuide.md ./dist
+cp .iMenu-Main.rb ./dist
+cp .iMenu-Classes.rb ./dist
+cp .menu-iMenu.csv ./dist
+cp .output-iMenu.csv ./dist
 
 gem install colorize
 gem install artii

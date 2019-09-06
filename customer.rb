@@ -48,7 +48,7 @@ def handle_exit(burger_info)
   end
 end
 
-def more_information_about_burgers(_burger_info, menuItems)
+def more_information_about_burgers(burger_info, menuItems)
   menuItems.each_with_index do |item, index|
     puts "#{index + 1}. #{item.name} $#{item.price}"
   end
@@ -86,7 +86,7 @@ end
 
 def menu(burger_info)
   menuItems = []
-  burger_info.each_with_index do |_array, index|
+  burger_info.each_with_index do |array, index|
     menuItems << Menu_item.new(burger_info[index][0], burger_info[index][1], burger_info[index][2])
   end
 

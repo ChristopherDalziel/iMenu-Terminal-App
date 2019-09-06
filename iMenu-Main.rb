@@ -1,5 +1,3 @@
-
-require 'argv'
 require 'colorize'
 require 'artii'
 
@@ -17,38 +15,38 @@ MENU = 'menu-iMenu.csv'
 OUTPUT = 'output-iMenu.csv'
 
 headings = []
-burger_info = []
+menu_info = []
 
 File.open(MENU, 'r').each_with_index do |line, index|
   unless line.empty?
     if index == 0
       headings << line.split(',')
     else
-      burger_info << line.split(',')
+      menu_info << line.split(',')
     end
   end
 end
 
-def handle_exit(burger_info)
+def handle_exit(menu_info)
   puts
   puts 'Would you like to enter another customers order? (Yes/No)'
   print '> '
   customerQuestion = STDIN.gets.chomp.downcase
   if customerQuestion == 'yes'
     puts `clear`
-    return menu(burger_info)
+    return menu(menu_info)
   elsif customerQuestion == 'no'
-    puts
-    puts 'Thanks for using!'.colorize(:green)
+    puts `clear`
+    puts 'Thanks for using iMenu!'.colorize(:green)
     exit
   else
-    puts 'Sorry that was an incorrect input, please try again.'.colorize(:red)
-    handle_exit(burger_info)
+    puts 'Sorry that was an incorrect input, please try again. (Yes/No)'.colorize(:red)
+    handle_exit(menu_info)
     exit
   end
 end
 
-def more_information_about_burgers(burger_info, menuItems)
+def more_information_from_about_menu_items(menu_info, menuItems)
   menuItems.each_with_index do |item, index|
     puts "#{index + 1}. #{item.name} $#{item.price}"
   end
@@ -66,32 +64,32 @@ def more_information_about_burgers(burger_info, menuItems)
     elsif userInput == 'yes'
       running = true
       puts
-      puts "Awesome, enter the number of the burger you'd like to know more about."
+      puts "Awesome, enter the number of the option you'd like to know more about."
       print '> '
       userInput2 = STDIN.gets.chomp.to_i - 1
       if userInput2 == -1 || userInput2 >= menuItems.length
         puts
-        puts 'Error, incorrect number input, would you like to try again?'.colorize(:red)
+        puts 'Error, incorrect number input, would you like to try again? (Yes/No)'.colorize(:red)
         print '> '.colorize(:red)
       else
         puts menuItems[userInput2].description
         puts
-        puts 'Did you want to know more about anything else?'
+        puts 'Did you want to know more about anything else?(Yes/No)'
       end
     else
-      puts 'Incorrect input, please try again with (Yes/No)'.colorize(:red)
+      puts 'Incorrect input, please try again with(Yes/No)'.colorize(:red)
     end
   end
 end
 
-def menu(burger_info)
+def menu(menu_info)
   menuItems = []
-  burger_info.each_with_index do |array, index|
-    menuItems << Menu_item.new(burger_info[index][0], burger_info[index][1], burger_info[index][2])
+  menu_info.each_with_index do |array, index|
+    menuItems << Menu_item.new(menu_info[index][0], menu_info[index][1], menu_info[index][2])
   end
 
   if ARGV[0] == 'show_menu'
-    more_information_about_burgers(burger_info, menuItems)
+    more_information_from_about_menu_items(menu_info, menuItems)
   end
   @order = []
   puts
@@ -102,7 +100,7 @@ def menu(burger_info)
   userName = Customer.new(userName)
   puts
   puts "Awesome #{userName.name.capitalize}, What would you like to order?"
-  puts "Input the number of the Burger you'd like below"
+  puts "Input the number of the option you'd like below"
   print '> '
 
   # broken
@@ -163,7 +161,7 @@ def menu(burger_info)
   File.open(OUTPUT, 'a+') do |line|
     line << "#{selection.name} Cost:$ #{selection.price}"
   end
-  handle_exit(burger_info)
+  handle_exit(menu_info)
 end
 
-menu(burger_info)
+menu(menu_info)

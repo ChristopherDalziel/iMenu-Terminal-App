@@ -59,8 +59,6 @@ Then ask if there is another order and loops back to the top of the code if requ
 Using ARGV there are some things we could impliment - Removing sections of the app to make service easier for a cashier or for a user who is aware of the menu/system already.
 - I also thought about adding a cashier options would take or remove an amount from a till amount added at the begining of code.
 
-I am currently aware of a bug of been able to add a random input when making a burger selection (Example: "siognirj" will output a result), I am still working to fix this, at this time.
-
 ## How the user will interact with your app 
 Open opening the app a pre-installed menu will be displayed, the user will be able to ask for further info on each intem displayed here or chose to move on without it. The app will them ask the user to place an order of an item displayed off the menu. In the future the menu will be adjusted to include multiple's of the same items, and further items/extra menu's (Drinks, Deserts etc.). 
 Once the user has has chosen their item(s) the system will congradulate, repeat their order and ask for a payment input. If the user puts in the correct amount the app will return change or return their input to them if it's below the required, an amount equal to the required will proceed. 

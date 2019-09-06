@@ -10,8 +10,8 @@ The built in menu datacase makes changing your menu and breeze! Alls you need to
 2. Further database display (Multiple Menu's, Future)
 3. Customer order input
 4. Change order (Future)
-5. Pay
-6. Print orders for the day
+5. Payment
+6. Orders Database
 
 # iMenu - Users Guide
 
@@ -20,7 +20,7 @@ Go to your systems terminal, move to the directory where you've downloaded the f
 Required gems: colorize, artii and argv (will install automatically if not already on your system).
 
 ### System Requirements 
-System requirements Ruby 2.5.1, `rbenv` and homebrew.
+Ruby 2.5.1, `rbenv` and homebrew.
 macOS
 
 ### Basic Users Guide

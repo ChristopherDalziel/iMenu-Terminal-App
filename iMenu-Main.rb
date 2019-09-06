@@ -103,21 +103,6 @@ def menu(menu_info)
   puts "Input the number of the option you'd like below"
   print '> '
 
-  # broken
-  # while user_is_ordering = true
-  #   userOrder = STDIN.gets.chomp.to_i - 1
-  #     if userOrder == -1 || userOrder >= menuItems.length
-  #       selection = menuItems[userOrder]
-  #       puts
-  #       puts "Thanks #{userName.name}! You ordered the #{selection.name}, and it costs $#{selection.price}."
-  #       user_is_ordering = false
-  #     else
-  #       puts
-  #       puts "You've entered an incorrect number, Please try again.".colorize(:red)
-  #       print "> "
-  #   end
-  # end
-
   user_is_ordering = true
   while user_is_ordering
     userOrder = STDIN.gets.chomp.to_i - 1
